@@ -84,6 +84,29 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;g
 .gal .wide{grid-column:span 2;aspect-ratio:2/1}
 .ba{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;grid-column:span 2}
 @media(max-width:760px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* before/after slider */
+.rvgrid{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:16px;margin-top:28px;align-items:stretch}
+.rvgrid .wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:16px;align-items:center}
+@media(max-width:900px){.rvgrid .wide{grid-template-columns:minmax(0,1fr)}}
+.ba-card{background:var(--sand);border:1px solid var(--rule);border-radius:12px;padding:12px}
+.ba-card h3{font-size:22px;margin:4px 4px 2px}.ba-card p{color:var(--mute);font-size:15px;margin:0 4px 10px}
+.cmp{position:relative;overflow:hidden;border-radius:8px;background:#000;touch-action:pan-y;user-select:none}
+.cmp img{display:block;width:100%;height:auto}
+.cmp .bef{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.cmp .bef img{width:100%;height:100%;object-fit:cover}
+.cmp .line{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.25);pointer-events:none}
+.cmp .knob{position:absolute;top:50%;left:var(--pos,50%);width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:var(--sun);color:#04111F;display:grid;place-items:center;font-weight:800;box-shadow:0 4px 14px rgba(0,0,0,.45);pointer-events:none}
+.cmp .tag{position:absolute;top:10px;background:rgba(5,7,15,.78);color:#fff;font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px;pointer-events:none}
+.cmp .tag.l{left:10px}.cmp .tag.r{right:10px}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;min-height:0}
+.cmp:has(input:focus-visible) .knob{outline:3px solid #fff;outline-offset:2px}
+.rvside{display:grid;gap:16px}
+.brakes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.brakes figure{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/3}
+.brakes img{width:100%;height:100%;object-fit:cover;display:block}
+.brakes figcaption{position:absolute;left:8px;bottom:8px;background:rgba(5,7,15,.78);color:#fff;font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px}
+.subh{font-size:clamp(26px,3.4vw,34px);margin-top:44px}
+@media(max-width:900px){.rvgrid{grid-template-columns:minmax(0,1fr)}}
 /* booking */
 #book{background:var(--pine);color:var(--sand)}
 #book .lede{color:light-dark(#B5C3E3,#4E5A73)}
@@ -120,6 +143,9 @@ textarea{min-height:110px;resize:vertical}
 .side h3{font-size:24px;margin-bottom:6px}.side p,.side li{color:light-dark(#C3CFEA,#4E5A73);font-size:15.5px}
 .side ol{padding-left:20px;display:grid;gap:6px}
 @media(max-width:900px){.bk{grid-template-columns:minmax(0,1fr)}}
+/* before/after sliders */
+document.querySelectorAll(".cmp input").forEach(r=>{const c=r.closest(".cmp");const f=()=>c.style.setProperty("--pos",r.value+"%");r.addEventListener("input",f);f()});
+
 /* reviews */
 .rv{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:28px;margin-top:32px;align-items:start}
 .score{background:linear-gradient(150deg,#1660E8,#7B3FE4);color:#fff;border-radius:12px;padding:28px}
@@ -159,7 +185,6 @@ footer a{color:var(--sun)}
 </style>
 </head>
 <body>
-<div class="draft">Draft preview: working hours and arrival windows are placeholders until confirmed with the owner.</div>
 
 <header class="top">
   <div class="wrap">
@@ -208,8 +233,41 @@ footer a{color:var(--sun)}
 <section class="band" id="work" style="background:var(--card)">
   <div class="wrap">
     <h2>Recent work around Navarre</h2>
-    <p class="lede">Real jobs, straight from our Facebook page.</p>
-    <div class="gal">
+    <p class="lede">Real jobs by our crew, from RV roofs to backyard fences.</p>
+    <h3 class="subh">RV repair: before &amp; after</h3>
+    <p class="lede">Drag the round handle to compare. Water damage is the number one RV killer on the Gulf Coast, and we fix it down to the framing.</p>
+    <div class="rvgrid">
+      <div class="ba-card">
+        <h3>Cab-over bunk rebuild</h3>
+        <p>Rotted, water-stained bunk floor torn out and rebuilt with a new deck, new walls and a clean finish.</p>
+        <div class="cmp" style="--pos:50%">
+          <img src="rv-bunk-after.jpg" alt="Cab-over bunk after: new wood-look floor, clean walls, TV mounted" loading="lazy">
+          <div class="bef"><img src="rv-bunk-before.jpg" alt="Cab-over bunk before: dark stained, rotted floor and rusted corner" loading="lazy"></div>
+          <span class="tag l">Before</span><span class="tag r">After</span><span class="line"></span><span class="knob" aria-hidden="true">↔</span>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare cab-over bunk before and after">
+        </div>
+      </div>
+      <div class="ba-card">
+          <h3>Roof decking replaced</h3>
+          <p>Soaked, moldy roof plywood cut out and replaced with new decking, ready for the new membrane.</p>
+          <div class="cmp" style="--pos:50%">
+            <img src="rv-roof-after.jpg" alt="RV roof after: new smooth plywood decking with vent opening" loading="lazy">
+            <div class="bef"><img src="rv-roof-before.jpg" alt="RV roof before: rotted, stained plywood around a vent" loading="lazy"></div>
+            <span class="tag l">Before</span><span class="tag r">After</span><span class="line"></span><span class="knob" aria-hidden="true">↔</span>
+            <input type="range" min="0" max="100" value="50" aria-label="Compare RV roof before and after">
+          </div>
+        </div>
+        <div class="ba-card wide">
+          <div><h3>Brakes &amp; wheel bearings</h3>
+          <p>Hubs pulled, bearings repacked and brakes serviced so your RV or trailer is safe on the road.</p></div>
+          <div class="brakes">
+            <figure><img src="rv-brakes1.jpg" alt="RV axle with hub removed showing brake assembly and greased spindle" loading="lazy"><figcaption>Hub off</figcaption></figure>
+            <figure><img src="rv-brakes2.jpg" alt="Technician fitting a brake drum back onto the RV axle" loading="lazy"><figcaption>Drum back on</figcaption></figure>
+          </div>
+        </div>
+    </div>
+    <h3 class="subh">Fences &amp; epoxy floors</h3>
+    <div class="gal" style="margin-top:20px">
       <div class="ba">
         <figure><img src="garage-before.jpg" alt="Bare stained concrete garage floor before coating" loading="lazy"><figcaption>Before</figcaption></figure>
         <figure><img src="garage-after.jpg" alt="Same garage with a new flake epoxy floor" loading="lazy"><figcaption>After: flake epoxy</figcaption></figure>
@@ -227,7 +285,7 @@ footer a{color:var(--sun)}
 <section class="band" id="book">
   <div class="wrap">
     <h2>Book a visit</h2>
-    <p class="lede">Four quick steps. We text you to confirm the arrival window, usually within a few hours.</p>
+    <p class="lede">Four quick steps. Your request comes straight to us, and we call you to confirm before your visit.</p>
     <div class="bk">
       <div class="form">
         <div class="steps" id="steps"><div>1. Job</div><div>2. Details</div><div>3. Day &amp; time</div><div>4. Contact</div></div>
@@ -244,6 +302,7 @@ footer a{color:var(--sun)}
           <p id="photoNote" style="font-size:14px;color:var(--mute);margin-top:6px"></p>
         </div>
         <div class="pane" data-p="2"><h3>Pick a day and window</h3>
+          <p style="color:var(--mute);font-size:15px;margin-bottom:10px">Earliest opening is 2 days out, so we have time to call you and confirm.</p>
           <div class="days" id="dayOpts"></div>
           <div class="wins" id="winOpts"></div>
         </div>
@@ -252,6 +311,7 @@ footer a{color:var(--sun)}
             <div><label for="fName">Name</label><input id="fName" autocomplete="name"></div>
             <div><label for="fPhone">Mobile number</label><input id="fPhone" type="tel" autocomplete="tel" placeholder="(850) 000-0000"></div>
           </div>
+          <input type="text" id="fWeb" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <label for="fAddr">Street address</label><input id="fAddr" autocomplete="street-address">
           <div class="two">
             <div><label for="fCity">City</label><select id="fCity"></select></div>
@@ -259,23 +319,34 @@ footer a{color:var(--sun)}
           </div>
         </div>
         <div class="pane" data-p="4">
-          <span class="stamp">REQUEST READY</span>
-          <h3>Here's your work order</h3>
-          <div class="ticket" id="ticket"></div>
-          <p style="color:var(--mute);font-size:15.5px">Send it to us by text so we can confirm your window. You can also copy it or call.</p>
-          <div class="bar" style="flex-wrap:wrap;justify-content:flex-start">
-            <a class="btn btn-em" id="smsLink" href="#">Text this request</a>
-            <a class="btn btn-ghost" id="mailLink" href="#" style="color:var(--ink)">Email it</a>
-            <button class="btn btn-ghost" type="button" id="copyBtn" style="color:var(--ink)">Copy work order</button>
-            <button class="btn btn-ghost" type="button" onclick="resetBk()" style="color:var(--ink)">Start over</button>
+          <div id="sending"><span class="stamp">SENDING…</span><h3>Sending your request</h3><p style="color:var(--mute)">One moment while we send it to Emerald Repair.</p></div>
+          <div id="sent" hidden>
+            <span class="stamp">REQUEST SENT</span>
+            <h3>Got it. Your request is in.</h3>
+            <p style="color:var(--mute);font-size:15.5px">We just received your booking by email. We’ll call you within 2 days to confirm your visit. Want a faster reply? Text it to us too.</p>
+            <div class="ticket" id="ticket"></div>
+            <div class="bar" style="flex-wrap:wrap;justify-content:flex-start">
+              <a class="btn btn-sun" id="smsLink" href="#">Also text it to us</a>
+              <button class="btn btn-ghost" type="button" id="copyBtn" style="color:var(--ink)">Copy my booking</button>
+              <button class="btn btn-em" type="button" onclick="resetBk()">Book another job</button>
+            </div>
+            <p style="font-size:14px;color:var(--mute);margin-top:12px">Optional. Your messages app opens with the booking already typed to (850) 781-2803. Tap Send, then come back here.</p>
           </div>
-          <p style="font-size:14px;color:var(--mute);margin-top:12px">Text or call (850) 781-2803 · emeraldrepairhrllc@yahoo.com</p>
+          <div id="failed" hidden>
+            <span class="stamp" style="color:#C2412D;border-color:#C2412D">NOT SENT</span>
+            <h3>That didn’t go through</h3>
+            <p style="color:var(--mute);font-size:15.5px">Check your connection and try again, or call or text (850) 781-2803.</p>
+            <div class="bar" style="flex-wrap:wrap;justify-content:flex-start">
+              <button class="btn btn-em" type="button" id="retryBtn">Try again</button>
+              <a class="btn btn-ghost" href="tel:+18507812803" style="color:var(--ink)">Call (850) 781-2803</a>
+            </div>
+          </div>
         </div>
         <div class="err" id="err" role="alert"></div>
         <div class="bar" id="bar"><button class="btn btn-ghost" type="button" id="backBtn" style="color:var(--ink)">Back</button><button class="btn btn-em" type="button" id="nextBtn">Continue</button></div>
       </div>
       <aside class="side">
-        <div class="card"><h3>How it works</h3><ol><li>You send the request.</li><li>We text to confirm a 2-hour arrival window.</li><li>We look at the job and give a written price before any work.</li><li>You approve, we fix it and clean up.</li></ol></div>
+        <div class="card"><h3>How it works</h3><ol><li>You pick an open 2-hour arrival window, 2 or more days out.</li><li>Your request comes straight to us and we call you to confirm.</li><li>We look at the job and give a written price before any work.</li><li>You approve, we fix it and clean up.</li></ol></div>
         <div class="card"><h3>Your request</h3><p id="sum">Nothing picked yet.</p></div>
         <div class="card"><h3>Rather talk?</h3><p>Call or text <a href="tel:+18507812803" style="color:var(--sun)">(850) 781-2803</a>. If we're on a ladder, leave a message and we'll call back the same day.</p></div>
       </aside>
@@ -343,7 +414,7 @@ footer a{color:var(--sun)}
 
 <footer><div class="wrap">
   <div><b style="font:800 24px var(--disp)">Emerald Repair H&amp;R LLC</b><br>RV repair · Fences · Epoxy floors · Handyman<br>Navarre, FL and surrounding areas</div>
-  <div>Call or text: <a href="tel:+18507812803">(850) 781-2803</a><br>Email: <a href="mailto:emeraldrepairhrllc@yahoo.com">emeraldrepairhrllc@yahoo.com</a><br><a href="https://www.facebook.com/people/Emerald-repair-HR/61596432340080/" target="_blank" rel="noopener">Facebook</a> · © <span id="yr"></span> Emerald Repair H&amp;R LLC</div>
+  <div>Call or text: <a href="tel:+18507812803">(850) 781-2803</a><br>Email: <span>emeraldrepairhrllc@yahoo.com</span><br><a href="https://www.facebook.com/people/Emerald-repair-HR/61596432340080/" target="_blank" rel="noopener">Facebook</a> · © <span id="yr"></span> Emerald Repair H&amp;R LLC</div>
 </div></footer>
 <div class="callbar"><a href="tel:+18507812803">Call</a><a href="#book">Book a visit</a></div>
 <div class="toast" id="toast" role="status"></div>
@@ -351,8 +422,14 @@ footer a{color:var(--sun)}
 <script>
 {
 const PHONE="+18507812803";
+/* Booking backend: paste the Google Apps Script web app URL here (ends in /exec). */
+const BOOKING_API="";
+/* Earliest day a customer can pick: 2 days after today, so he has time to call and confirm. */
+const LEAD_DAYS=2;
+/* Backup if the backend isn't set up yet: emails the request to him, like the Hispanhandle site. */
+const FORM_EMAIL="emeraldrepairhrllc@yahoo.com";
 const JOBS=[
- {id:"rv",name:"RV repair",desc:"Interior and exterior RV repairs: doors, cabinets, steps, trim, seals and leaks. We come to where it’s parked.",from:"Free estimate"},
+ {id:"rv",name:"RV repair",desc:"Roof and water damage, rotted floors and bunks, brakes and wheel bearings, doors, cabinets, seals and leaks.",from:"Free estimate"},
  {id:"fence",name:"Fence installation",desc:"New wood privacy fences, pool fences and gates, plus repairs and replacement panels.",from:"Free estimate"},
  {id:"epoxy",name:"Epoxy garage floors",desc:"Flake epoxy coatings that turn stained concrete into a clean, glossy, easy-to-clean floor.",from:"Free estimate"},
  {id:"home",name:"Home improvements",desc:"Upgrades and small remodels: fixtures, shelving, doors, trim and finishing work.",from:"Free estimate"},
@@ -362,13 +439,12 @@ const JOBS=[
  {id:"storm",name:"Storm damage",desc:"Downed fence panels, siding and trim after wind or rain. Send photos with your request.",from:"Priority"}
 ];
 const TOWNS=["Navarre","Navarre Beach","Holley","Midway","Gulf Breeze","Pensacola Beach","Milton","Pace","Mary Esther","Fort Walton Beach"];
-const HOURS=[null,[7,18],[7,18],[7,18],[7,18],[7,18],[8,14]]; // Sun..Sat
+const HOURS=[null,[7.5,17],[7.5,17],[7.5,17],[7.5,17],[7.5,17],[7.5,12]]; // Sun..Sat
 const WINS=[[8,10,"Morning"],[10,12,"Late morning"],[13,15,"Early afternoon"],[15,17,"Late afternoon"]];
 const DAYN=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const fmtH=h=>{const hh=Math.floor(h);return (((hh+11)%12)+1)+(hh>=12?" PM":" AM")};
-const MAIL="emeraldrepairhrllc@yahoo.com";
+const fmtH=h=>{const hh=Math.floor(h),m=Math.round((h-hh)*60);return (((hh+11)%12)+1)+(m?":"+String(m).padStart(2,"0"):"")+(hh>=12?" PM":" AM")};
 const toast=t=>{const e=$("toast");e.textContent=t;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),2200)};
 $("yr").textContent=new Date().getFullYear();
 
@@ -381,7 +457,7 @@ $("today").textContent=t;
 
 /* services */
 $("svcList").innerHTML=JOBS.map(j=>`<article class="tix"><h3>${j.name}</h3><p>${j.desc}</p><div class="row"><span class="from">${j.from}</span><button type="button" data-job="${j.id}">Book this</button></div></article>`).join("");
-$("svcList").addEventListener("click",e=>{const b=e.target.closest("[data-job]");if(!b)return;S.job=b.dataset.job;renderJobs();go(0);sum();$("book").scrollIntoView()});
+$("svcList").addEventListener("click",e=>{const b=e.target.closest("[data-job]");if(!b)return;S.job=b.dataset.job;renderJobs();go(0);loadTaken();sum();$("book").scrollIntoView()});
 
 /* area */
 $("towns").innerHTML=TOWNS.map(x=>`<span>${x}</span>`).join("");
@@ -393,18 +469,27 @@ const S={job:null,date:null,win:null,step:0};
 function renderJobs(){$("jobOpts").innerHTML=JOBS.map(j=>`<button type="button" class="opt ${S.job===j.id?"sel":""}" aria-pressed="${S.job===j.id}" data-id="${j.id}">${j.name}<small>${j.from}</small></button>`).join("")}
 $("jobOpts").addEventListener("click",e=>{const b=e.target.closest(".opt");if(!b)return;S.job=b.dataset.id;renderJobs();sum()});
 const key=x=>x.getFullYear()+"-"+String(x.getMonth()+1).padStart(2,"0")+"-"+String(x.getDate()).padStart(2,"0");
+let TAKEN=new Set(),takenLoaded=false;
+const slotKey=(d,w)=>d+"|"+w;
+function winsFor(k){const hr=HOURS[new Date(k+"T00:00").getDay()];return hr?WINS.map((w,i)=>({w,i})).filter(o=>o.w[0]>=hr[0]-0.5&&o.w[1]<=hr[1]):[]}
+const dayFull=k=>{const ws=winsFor(k);return ws.length>0&&ws.every(o=>TAKEN.has(slotKey(k,o.i)))};
+async function loadTaken(){
+  if(!BOOKING_API){takenLoaded=true;return}
+  try{const r=await fetch(BOOKING_API,{cache:"no-store"});const j=await r.json();TAKEN=new Set((j.taken||[]).map(s=>slotKey(s.date,Number(s.win))))}catch(e){}
+  takenLoaded=true;if(S.step===2)renderDays();
+}
 function renderDays(){
   const out=[];
-  for(let i=1;i<=14;i++){const x=new Date();x.setHours(0,0,0,0);x.setDate(x.getDate()+i);const ok=!!HOURS[x.getDay()],k=key(x);
-    out.push(`<button type="button" class="day ${S.date===k?"sel":""}" ${ok?"":"disabled"} data-k="${k}"><small>${DAYN[x.getDay()].slice(0,3)}</small><b>${x.getDate()}</b><small>${x.toLocaleString("en-US",{month:"short"})}</small></button>`)}
+  for(let i=LEAD_DAYS;i<LEAD_DAYS+14;i++){const x=new Date();x.setHours(0,0,0,0);x.setDate(x.getDate()+i);const k=key(x),ok=!!HOURS[x.getDay()]&&!dayFull(k);
+    out.push(`<button type="button" class="day ${S.date===k?"sel":""}" ${ok?"":"disabled"} data-k="${k}"><small>${DAYN[x.getDay()].slice(0,3)}</small><b>${x.getDate()}</b><small>${HOURS[x.getDay()]&&!ok?"Full":x.toLocaleString("en-US",{month:"short"})}</small></button>`)}
   $("dayOpts").innerHTML=out.join("");
-  if(!S.date){$("winOpts").innerHTML='<p style="color:var(--mute);grid-column:1/-1">Choose a day to see arrival windows.</p>';return}
-  const hr=HOURS[new Date(S.date+"T00:00").getDay()];
-  $("winOpts").innerHTML=WINS.filter(w=>w[1]<=hr[1]).map((w,i)=>`<button type="button" class="opt ${S.win===i?"sel":""}" data-w="${i}">${w[2]}<small>${fmtH(w[0])} – ${fmtH(w[1])}</small></button>`).join("");
+  if(!S.date){$("winOpts").innerHTML='<p style="color:var(--mute);grid-column:1/-1">'+(takenLoaded?"Choose a day to see arrival windows.":"Checking open times…")+'</p>';return}
+  if(S.win!=null&&TAKEN.has(slotKey(S.date,S.win)))S.win=null;
+  $("winOpts").innerHTML=winsFor(S.date).map(({w,i})=>{const tk=TAKEN.has(slotKey(S.date,i));return `<button type="button" class="opt ${S.win===i?"sel":""}" data-w="${i}" ${tk?"disabled":""} style="${tk?"opacity:.45;cursor:not-allowed":""}">${w[2]}<small>${tk?"Already booked":fmtH(w[0])+" – "+fmtH(w[1])}</small></button>`}).join("");
 }
 $("dayOpts").addEventListener("click",e=>{const b=e.target.closest(".day");if(!b||b.disabled)return;S.date=b.dataset.k;S.win=null;renderDays();sum()});
-$("winOpts").addEventListener("click",e=>{const b=e.target.closest("[data-w]");if(!b)return;S.win=+b.dataset.w;renderDays();sum()});
-$("fPhoto").addEventListener("change",e=>{const c=e.target.files.length;$("photoNote").textContent=c?c+" photo"+(c>1?"s":"")+" added. Text them to us with your request.":""});
+$("winOpts").addEventListener("click",e=>{const b=e.target.closest("[data-w]");if(!b||b.disabled)return;S.win=+b.dataset.w;renderDays();sum()});
+$("fPhoto").addEventListener("change",e=>{const c=e.target.files.length;$("photoNote").textContent=c?c+" photo"+(c>1?"s":"")+" added. When we text you to confirm, just reply with them.":""});
 const whenTxt=()=>new Date(S.date+"T00:00").toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric"})+", "+fmtH(WINS[S.win][0])+" – "+fmtH(WINS[S.win][1]);
 function sum(){
   const p=[],j=JOBS.find(x=>x.id===S.job);if(j)p.push(j.name);
@@ -416,10 +501,34 @@ function go(k){
   document.querySelectorAll("#steps div").forEach((x,i)=>{x.classList.toggle("on",i===k);x.classList.toggle("done",i<k)});
   $("backBtn").style.visibility=k>0&&k<4?"visible":"hidden";
   $("bar").style.display=k===4?"none":"flex";
-  $("nextBtn").textContent=k===3?"Review my request":"Continue";
+  $("nextBtn").textContent=k===3?"Book my visit":"Continue";
   if(k===2)renderDays();
 }
-let orderTxt="";
+let orderTxt="",payload=null;
+const show=id=>["sending","sent","failed"].forEach(x=>$(x).hidden=x!==id);
+async function emailOwner(){
+  const r=await fetch("https://formsubmit.co/ajax/"+FORM_EMAIL,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
+    body:JSON.stringify({_subject:"New booking: "+payload.job+", "+payload.whenText,_template:"table",_captcha:"false",_honey:payload.website,
+      Job:payload.job,When:payload.whenText,Name:payload.name,Phone:payload.phone,Address:payload.address+", "+payload.city,
+      Details:payload.details,Property:payload.property,Urgency:payload.urgency,Email:payload.email||"-"})});
+  if(!r.ok)throw new Error("email");
+}
+async function send(){
+  show("sending");go(4);
+  try{
+    if(BOOKING_API){
+      const r=await fetch(BOOKING_API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)});
+      const j=await r.json();
+      if(!j.ok&&j.reason==="taken"){TAKEN.add(slotKey(S.date,S.win));S.win=null;go(2);renderDays();sum();$("err").textContent="Someone just booked that window. Please pick another time.";return}
+      if(!j.ok)throw new Error(j.reason||"error");
+    }
+    await emailOwner();
+    TAKEN.add(slotKey(S.date,S.win));
+    const ios=/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent);
+    $("smsLink").href="sms:"+PHONE+(ios?"&":"?")+"body="+encodeURIComponent(orderTxt);
+    show("sent");
+  }catch(err){show("failed")}
+}
 $("nextBtn").addEventListener("click",()=>{
   const E=m=>{$("err").textContent=m};
   if(S.step===0&&!S.job)return E("Pick the kind of job to continue.");
@@ -428,19 +537,23 @@ $("nextBtn").addEventListener("click",()=>{
   if(S.step===3){
     const nm=$("fName").value.trim(),ph=$("fPhone").value.replace(/\D/g,""),ad=$("fAddr").value.trim();
     if(!nm)return E("Enter your name.");if(ph.length<10)return E("Enter a 10-digit mobile number.");if(!ad)return E("Enter the street address.");
-    const rows=[["Name",nm],["Phone",$("fPhone").value.trim()],["Job",JOBS.find(x=>x.id===S.job).name],["Details",$("fDesc").value.trim()],["Property",$("fProp").value],["Urgency",$("fUrg").value],["Requested",whenTxt()],["Address",ad+", "+$("fCity").value]];
+    const job=JOBS.find(x=>x.id===S.job).name;
+    const rows=[["Name",nm],["Phone",$("fPhone").value.trim()],["Job",job],["Details",$("fDesc").value.trim()],["Property",$("fProp").value],["Urgency",$("fUrg").value],["When",whenTxt()],["Address",ad+", "+$("fCity").value]];
     $("ticket").innerHTML=rows.map(r=>`<div><span>${r[0]}</span><b>${esc(r[1])}</b></div>`).join("");
-    orderTxt="Emerald Repair H&R LLC booking request\n"+rows.map(r=>r[0]+": "+r[1]).join("\n");
-    $("smsLink").href="sms:"+PHONE+"?&body="+encodeURIComponent(orderTxt);
-    $("mailLink").href="mailto:"+MAIL+"?subject="+encodeURIComponent("Booking request: "+JOBS.find(x=>x.id===S.job).name)+"&body="+encodeURIComponent(orderTxt);
-    return go(4);
+    orderTxt="Emerald Repair H&R LLC booking\n"+rows.map(r=>r[0]+": "+r[1]).join("\n");
+    payload={date:S.date,win:S.win,window:WINS[S.win][2]+" "+fmtH(WINS[S.win][0])+" – "+fmtH(WINS[S.win][1]),whenText:whenTxt(),job,name:nm,phone:$("fPhone").value.trim(),address:ad,city:$("fCity").value,details:$("fDesc").value.trim(),property:$("fProp").value,urgency:$("fUrg").value,email:$("fEmail").value.trim(),website:$("fWeb").value};
+    return send();
   }
   go(S.step+1);
 });
 $("backBtn").addEventListener("click",()=>go(S.step-1));
-$("copyBtn").addEventListener("click",async()=>{try{await navigator.clipboard.writeText(orderTxt);toast("Work order copied")}catch(e){toast("Copy didn't work. Select the text above instead.")}});
+$("retryBtn").addEventListener("click",send);
+$("copyBtn").addEventListener("click",async()=>{try{await navigator.clipboard.writeText(orderTxt);toast("Booking copied")}catch(e){toast("Copy didn't work. Select the text above instead.")}});
 window.resetBk=()=>{Object.assign(S,{job:null,date:null,win:null});["fDesc","fName","fPhone","fAddr","fEmail","fPhoto"].forEach(i=>$(i).value="");$("photoNote").textContent="";renderJobs();sum();go(0)};
-renderJobs();go(0);
+renderJobs();go(0);loadTaken();
+
+/* before/after sliders */
+document.querySelectorAll(".cmp input").forEach(r=>{const c=r.closest(".cmp");const f=()=>c.style.setProperty("--pos",r.value+"%");r.addEventListener("input",f);f()});
 
 /* reviews */
 let stars=0;
