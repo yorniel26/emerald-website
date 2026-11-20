@@ -53,9 +53,12 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;g
 .hero::before{content:"";position:absolute;left:-10%;right:-10%;top:62%;height:70px;background:linear-gradient(90deg,transparent,#7B3FE4 30%,#2FD2FF 60%,transparent);transform:skewY(-6deg);opacity:.35}
 .hero .wrap{position:relative}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:40px;align-items:center;padding-top:56px;padding-bottom:56px}
+.hero h1 em{color:var(--sun);font-style:italic}
 .hero h1{font-size:clamp(46px,6.5vw,84px);line-height:.95;margin-bottom:18px}
 .hero p{font-size:19px;max-width:44ch;color:#C9D6F5;margin-bottom:26px}
-.hero .logo{width:96px;height:96px;margin-bottom:16px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.5))}
+.mob{display:inline-flex;align-items:center;gap:10px;background:rgba(47,210,255,.14);border:1px solid rgba(47,210,255,.45);color:#E6F8FF!important;font-weight:600;font-size:15px!important;padding:6px 14px 6px 6px;border-radius:999px;margin-bottom:16px!important}
+.mob span{background:var(--sun);color:#04111F;font-weight:800;padding:3px 10px;border-radius:999px}
+.hero .logo{display:block;width:96px;height:96px;margin-bottom:16px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.5))}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
 .today{margin-top:22px;font-size:15px;color:#BFD0F2;display:flex;gap:8px;align-items:center}
 .today i{width:10px;height:10px;border-radius:50%;background:var(--sun);display:inline-block;box-shadow:0 0 10px var(--sun)}
@@ -107,6 +110,21 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;g
 .brakes figcaption{position:absolute;left:8px;bottom:8px;background:rgba(5,7,15,.78);color:#fff;font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px}
 .subh{font-size:clamp(26px,3.4vw,34px);margin-top:44px}
 @media(max-width:900px){.rvgrid{grid-template-columns:minmax(0,1fr)}}
+.truck{position:relative;margin:0}
+.truck figcaption{position:absolute;left:14px;top:14px;right:14px;width:fit-content;max-width:calc(100% - 28px);background:rgba(5,7,15,.82);color:#fff;font-weight:700;font-size:15px;padding:8px 14px;border-radius:999px;border:1px solid rgba(47,210,255,.5)}
+/* mobile band */
+.mobband{background:var(--sun);color:#04111F}
+.mobband .wrap{padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(40px,5vw,64px)}
+.mobband h2{font-size:clamp(40px,6vw,72px);margin-bottom:8px}
+.mobband .lede{color:#0B2340;font-size:19px;max-width:62ch}
+.spots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.spot{background:#fff;border-radius:12px;padding:22px;box-shadow:0 10px 30px rgba(4,17,31,.15)}
+.spot svg{width:44px;height:44px;color:#1660E8;margin-bottom:10px}
+.spot h3{font-size:26px;color:#04111F}.spot p{color:#33415C;font-size:15.5px;margin-top:4px}
+.mobband .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;align-items:center}
+.mobband .btn-dark{background:#04111F;color:#fff}.mobband .btn-dark:hover{background:#13213F}
+.mobband .cta a.tel{font-weight:800;font-size:18px;color:#04111F}
+@media(max-width:760px){.spots{grid-template-columns:minmax(0,1fr)}.truck figcaption{font-size:13px;padding:6px 12px;left:10px;top:10px}}
 /* booking */
 #book{background:var(--pine);color:var(--sand)}
 #book .lede{color:light-dark(#B5C3E3,#4E5A73)}
@@ -143,9 +161,6 @@ textarea{min-height:110px;resize:vertical}
 .side h3{font-size:24px;margin-bottom:6px}.side p,.side li{color:light-dark(#C3CFEA,#4E5A73);font-size:15.5px}
 .side ol{padding-left:20px;display:grid;gap:6px}
 @media(max-width:900px){.bk{grid-template-columns:minmax(0,1fr)}}
-/* before/after sliders */
-document.querySelectorAll(".cmp input").forEach(r=>{const c=r.closest(".cmp");const f=()=>c.style.setProperty("--pos",r.value+"%");r.addEventListener("input",f);f()});
-
 /* reviews */
 .rv{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:28px;margin-top:32px;align-items:start}
 .score{background:linear-gradient(150deg,#1660E8,#7B3FE4);color:#fff;border-radius:12px;padding:28px}
@@ -162,6 +177,8 @@ document.querySelectorAll(".cmp input").forEach(r=>{const c=r.closest(".cmp");co
 @media(max-width:900px){.rv{grid-template-columns:minmax(0,1fr)}}
 /* area */
 .area{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:center;margin-top:28px}
+.addr{display:flex;gap:12px;align-items:flex-start;background:var(--sand);border:1px solid var(--rule);border-radius:10px;padding:14px 16px;margin-top:16px;max-width:420px;font-size:16px;line-height:1.45}
+.addr svg{flex:none;color:var(--em);margin-top:2px}.addr a{color:var(--em);font-weight:700}
 .towns{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
 .towns span{background:var(--card);border:1px solid var(--rule);border-radius:999px;padding:6px 14px;font-weight:600;font-size:15px}
 .hours{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden}
@@ -183,6 +200,7 @@ footer a{color:var(--sun)}
 .toast{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);background:var(--pine);color:var(--sand);padding:12px 18px;border-radius:8px;font-weight:600;opacity:0;transition:opacity .25s;pointer-events:none;z-index:60}
 .toast.show{opacity:1}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Emerald Repair H&R LLC","description":"Mobile RV repair, fence installation, epoxy garage floors and handyman service. We come to you in Navarre, FL and surrounding areas.","telephone":"+1-850-781-2803","email":"emeraldrepairhrllc@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Navarre","addressRegion":"FL","postalCode":"32566","addressCountry":"US"},"areaServed":["Navarre","Navarre Beach","Holley","Midway","Gulf Breeze","Pensacola Beach","Milton","Pace","Mary Esther","Fort Walton Beach"],"openingHours":["Mo-Fr 07:30-17:00","Sa 07:30-12:00"],"sameAs":["https://www.facebook.com/people/Emerald-repair-HR/61596432340080/"]}</script>
 </head>
 <body>
 
@@ -190,11 +208,11 @@ footer a{color:var(--sun)}
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Emerald Repair H&amp;R home">
       <img src="logo.png" width="48" height="48" alt="" style="border-radius:50%">
-      <span><b>Emerald Repair H&amp;R</b><small>RV repair &amp; handyman · Navarre, FL</small></span>
+      <span><b>Emerald Repair H&amp;R</b><small>Mobile RV repair &amp; handyman · Navarre, FL</small></span>
     </a>
     <nav class="menu" aria-label="Main">
       <a href="#services">Services</a><a href="#work">Our work</a><a href="#reviews">Reviews</a><a href="#area">Service area</a><a href="#faq">FAQ</a>
-      <a class="btn btn-em" href="#book">Book a visit</a>
+      <a class="btn btn-em" href="#book">Book a mobile visit</a>
     </nav>
   </div>
 </header>
@@ -204,28 +222,42 @@ footer a{color:var(--sun)}
   <div class="wrap">
     <div>
       <img class="logo" src="logo.png" alt="Emerald Repair H&amp;R RV Repair and Handyman logo">
-      <h1>RV repair, fences &amp; home fixes. Done right.</h1>
-      <p>Navarre’s local handyman for RV repairs, wood fences, epoxy garage floors, painting, carpentry and the rest of your list. Free estimates.</p>
+      <p class="mob"><span>100% mobile</span> No towing. No drop-off.</p>
+      <h1>Mobile RV repair &amp; handyman. <em>We come to you.</em></h1>
+      <p>Navarre’s mobile handyman for RV repairs, wood fences, epoxy garage floors, painting, carpentry and the rest of your list. We come to your home, campground or storage lot. Free estimates.</p>
       <div class="ctas">
-        <a class="btn btn-sun" href="#book">Book a free estimate</a>
+        <a class="btn btn-sun" href="#book">Book a mobile visit</a>
         <a class="btn btn-ghost" href="tel:+18507812803">Call (850) 781-2803</a>
       </div>
       <div class="today"><i></i><span id="today"></span></div>
     </div>
-    <img class="scene" src="truck.jpg" alt="Emerald Repair H&amp;R LLC work truck wrapped in blue with RV repair and fence graphics, under palm trees">
+    <figure class="truck"><img class="scene" src="truck.jpg" alt="Emerald Repair H&amp;R LLC work truck wrapped in blue with RV repair and fence graphics, under palm trees"><figcaption>Our shop on wheels. It comes to your driveway.</figcaption></figure>
   </div>
 </section>
 <div class="trust"><div class="wrap">
   <span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2FD2FF" stroke-width="2.4"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>Local Navarre LLC</span>
   <span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2FD2FF" stroke-width="2.4"><path d="M4 12h16M12 4v16"/></svg>Free written estimates</span>
-  <span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2FD2FF" stroke-width="2.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>We come to you, RVs included</span>
+  <span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2FD2FF" stroke-width="2.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Fully mobile: we come to you</span>
   <span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2FD2FF" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg>Clean-up included</span>
 </div></div>
+
+<section class="mobband" id="mobile">
+  <div class="wrap">
+    <h2>We come to you.</h2>
+    <p class="lede">Every job is done on-site. No towing your RV to a shop, no dropping it off and waiting weeks. Our fully loaded truck brings the tools and parts to wherever you are.</p>
+    <div class="spots">
+      <div class="spot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><h3>Your driveway</h3><p>Fences, floors, home repairs, and RVs parked at home.</p></div>
+      <div class="spot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 20h18"/><path d="M6 20l6-14 6 14"/><path d="M10 20l2-5 2 5"/></svg><h3>Campground or RV park</h3><p>On the road and something broke? We meet you at your site.</p></div>
+      <div class="spot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M3 7l9-4 9 4"/><path d="M7 20v-7h10v7"/><path d="M7 16h10"/></svg><h3>Storage lot</h3><p>We fix it where it sits, so it’s ready when you are.</p></div>
+    </div>
+    <div class="cta"><a class="btn btn-dark" href="#book">Book a mobile visit</a><a class="tel" href="tel:+18507812803">or call (850) 781-2803</a></div>
+  </div>
+</section>
 
 <section class="band" id="services">
   <div class="wrap">
     <h2>What we do</h2>
-    <p class="lede">From your RV to your backyard fence to your garage floor. Pick a service to start a booking.</p>
+    <p class="lede">Every service is mobile: from your RV to your backyard fence to your garage floor, we do it on-site. Pick a service to start a booking.</p>
     <div class="svc" id="svcList"></div>
   </div>
 </section>
@@ -386,10 +418,12 @@ footer a{color:var(--sun)}
 
 <section class="band" id="area" style="background:var(--card)">
   <div class="wrap">
-    <h2>Where we work</h2>
+    <h2>We come to you</h2>
     <div class="area">
       <div>
-        <p class="lede">Based in Navarre, FL and serving the surrounding areas. Not sure if you’re in range? Text us your ZIP.</p>
+        <p class="lede">We’re a fully mobile service based in Navarre, FL. We work at your home, campground or RV storage lot across the area. Not sure if you’re in range? Text us your ZIP.</p>
+        <div class="addr"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 16V7h11v9"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+          <div><b>100% mobile service</b><br>No shop to haul to. We bring the tools, the truck and the parts to your driveway, campground or storage lot.</div></div>
         <div class="towns" id="towns"></div>
         <a class="btn btn-em" href="#book">Book in your town</a>
       </div>
@@ -401,6 +435,7 @@ footer a{color:var(--sun)}
 <section class="band" id="faq">
   <div class="wrap" style="max-width:860px">
     <h2>Good questions</h2>
+    <details><summary>Do I need to bring my RV somewhere?</summary><p>No. We’re fully mobile. We come to wherever it’s parked: your driveway, a campground or a storage lot. Just tell us the spot when you book.</p></details>
     <details><summary>Do you charge for estimates?</summary><p>No. We look at the job and give you a written price before any work starts. You decide, no pressure.</p></details>
     <details><summary>Is there a minimum job size?</summary><p>Small jobs are welcome. Grouping a few small repairs in one visit saves you money.</p></details>
     <details><summary>Do you come to my RV?</summary><p>Yes. Tell us the make, model and year when you book, and where it’s parked: home, storage lot or campground.</p></details>
@@ -413,8 +448,8 @@ footer a{color:var(--sun)}
 </main>
 
 <footer><div class="wrap">
-  <div><b style="font:800 24px var(--disp)">Emerald Repair H&amp;R LLC</b><br>RV repair · Fences · Epoxy floors · Handyman<br>Navarre, FL and surrounding areas</div>
-  <div>Call or text: <a href="tel:+18507812803">(850) 781-2803</a><br>Email: <span>emeraldrepairhrllc@yahoo.com</span><br><a href="https://www.facebook.com/people/Emerald-repair-HR/61596432340080/" target="_blank" rel="noopener">Facebook</a> · © <span id="yr"></span> Emerald Repair H&amp;R LLC</div>
+  <div><b style="font:800 24px var(--disp)">Emerald Repair H&amp;R LLC</b><br>RV repair · Fences · Epoxy floors · Handyman<br>Mobile service · Navarre, FL and surrounding areas</div>
+  <div>Call or text: <a href="tel:+18507812803">(850) 781-2803</a><br>Email: <span>emeraldrepairhrllc@gmail.com</span><br><a href="https://www.facebook.com/people/Emerald-repair-HR/61596432340080/" target="_blank" rel="noopener">Facebook</a> · © <span id="yr"></span> Emerald Repair H&amp;R LLC</div>
 </div></footer>
 <div class="callbar"><a href="tel:+18507812803">Call</a><a href="#book">Book a visit</a></div>
 <div class="toast" id="toast" role="status"></div>
@@ -427,7 +462,7 @@ const BOOKING_API="";
 /* Earliest day a customer can pick: 2 days after today, so he has time to call and confirm. */
 const LEAD_DAYS=2;
 /* Backup if the backend isn't set up yet: emails the request to him, like the Hispanhandle site. */
-const FORM_EMAIL="emeraldrepairhrllc@yahoo.com";
+const FORM_EMAIL="emeraldrepairhrllc@gmail.com";
 const JOBS=[
  {id:"rv",name:"RV repair",desc:"Roof and water damage, rotted floors and bunks, brakes and wheel bearings, doors, cabinets, seals and leaks.",from:"Free estimate"},
  {id:"fence",name:"Fence installation",desc:"New wood privacy fences, pool fences and gates, plus repairs and replacement panels.",from:"Free estimate"},
@@ -511,7 +546,8 @@ async function emailOwner(){
     body:JSON.stringify({_subject:"New booking: "+payload.job+", "+payload.whenText,_template:"table",_captcha:"false",_honey:payload.website,
       Job:payload.job,When:payload.whenText,Name:payload.name,Phone:payload.phone,Address:payload.address+", "+payload.city,
       Details:payload.details,Property:payload.property,Urgency:payload.urgency,Email:payload.email||"-"})});
-  if(!r.ok)throw new Error("email");
+  const j=await r.json().catch(()=>({}));
+  if(!r.ok||String(j.success)!=="true")throw new Error(j.message||"email");
 }
 async function send(){
   show("sending");go(4);
