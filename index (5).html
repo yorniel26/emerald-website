@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emerald Repair H&amp;R LLC | RV Repair &amp; Handyman, Navarre FL</title>
+<meta name="description" content="RV repair, fence installation, epoxy garage floors and handyman work in Navarre, FL and surrounding areas. Free estimates. Call (850) 781-2803.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/*
+VOICE: local Navarre tradesman, bold like his truck wrap
+IDEA: a work order ticket; booking fills one out, the confirmation is the stamped ticket
+PICTURE: his wrapped F-250, big, plus his own job photos
+COLOUR and TYPE: truck-wrap black-navy, electric blue, violet streak; Barlow Condensed italic + Barlow
+LAYOUT: full-bleed emerald hero with the scene, service tickets, a stepped booking form, reviews, area, FAQ
+*/
+:root{color-scheme:light dark;
+  --em:#1660E8;--em-d:#0B1530;--pine:light-dark(#0A0F1F,#E8EEFB);
+  --sand:light-dark(#F2F5FB,#0B1122);--card:light-dark(#FFFFFF,#141C33);
+  --ink:light-dark(#0E1528,#E8EEFB);--mute:light-dark(#4E5A73,#A7B3CC);
+  --rule:light-dark(#D6DDEA,#263155);--sun:#2FD2FF;--vio:#7B3FE4;
+  --disp:"Barlow Condensed","Arial Narrow",Impact,sans-serif;--body:"Barlow",system-ui,sans-serif}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--sand);color:var(--ink);font:17px/1.6 var(--body);overflow-x:clip}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 max(5vw,18px)}
+h1,h2,h3{font-family:var(--disp);font-weight:800;font-style:italic;line-height:1.02;text-wrap:balance}
+h2{font-size:clamp(36px,5vw,52px);margin-bottom:12px}
+.lede{color:var(--mute);max-width:60ch;font-size:18px}
+.band{padding:clamp(48px,7vw,96px) 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;font:700 16px/1 var(--body);padding:0 24px;border-radius:6px;text-decoration:none;cursor:pointer;border:2px solid transparent}
+.btn-sun{background:var(--sun);color:#04111F}.btn-sun:hover{background:#7FE3FF}
+.btn-ghost{border-color:currentColor;background:transparent;color:inherit}.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-em{background:var(--em);color:#fff}.btn-em:hover{background:var(--em-d)}
+.draft{background:var(--pine);color:var(--sand);font-size:13px;text-align:center;padding:7px 16px}
+header.top{position:sticky;top:0;z-index:40;background:var(--card);border-bottom:1px solid var(--rule)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand b{font-family:var(--disp);font-weight:800;font-size:26px;line-height:.9;display:block}
+.brand small{font-size:12px;color:var(--mute)}
+.menu{display:flex;align-items:center;gap:26px;font-weight:600;font-size:15px}
+.menu a{text-decoration:none}.menu a:not(.btn):hover{color:var(--em)}
+@media(max-width:860px){.menu a:not(.btn){display:none}}
+@media(max-width:600px){.brand small,.menu .btn{display:none}.brand b{font-size:22px}}
+/* hero */
+.hero{background:radial-gradient(120% 90% at 85% 40%,#1D3FA8 0,#0B1530 55%,#05070F 100%);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:-10%;right:-10%;top:62%;height:70px;background:linear-gradient(90deg,transparent,#7B3FE4 30%,#2FD2FF 60%,transparent);transform:skewY(-6deg);opacity:.35}
+.hero .wrap{position:relative}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:40px;align-items:center;padding-top:56px;padding-bottom:56px}
+.hero h1 em{color:var(--sun);font-style:italic}
+.hero h1{font-size:clamp(46px,6.5vw,84px);line-height:.95;margin-bottom:18px}
+.hero p{font-size:19px;max-width:44ch;color:#C9D6F5;margin-bottom:26px}
+.mob{display:inline-flex;align-items:center;gap:10px;background:rgba(47,210,255,.14);border:1px solid rgba(47,210,255,.45);color:#E6F8FF!important;font-weight:600;font-size:15px!important;padding:6px 14px 6px 6px;border-radius:999px;margin-bottom:16px!important}
+.mob span{background:var(--sun);color:#04111F;font-weight:800;padding:3px 10px;border-radius:999px}
+.hero .logo{display:block;width:96px;height:96px;margin-bottom:16px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.5))}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.today{margin-top:22px;font-size:15px;color:#BFD0F2;display:flex;gap:8px;align-items:center}
+.today i{width:10px;height:10px;border-radius:50%;background:var(--sun);display:inline-block;box-shadow:0 0 10px var(--sun)}
+.scene{width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,.55);border:1px solid rgba(47,210,255,.35)}
+.trust{background:#05070F;color:#E3EAFB;border-top:3px solid var(--vio)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;padding-top:20px;padding-bottom:20px;font-weight:600;font-size:15px}
+.trust span{display:flex;gap:10px;align-items:center}.trust svg{flex:none}
+@media(max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.trust .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:32px}
+.tix{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:8px;position:relative}
+.tix::after{content:"";position:absolute;left:22px;right:22px;bottom:64px;border-top:2px dashed var(--rule)}
+.tix h3{font-size:26px}.tix p{color:var(--mute);font-size:15.5px;flex:1;margin-bottom:22px}
+.tix .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.tix .from{font-weight:700;white-space:nowrap}
+.tix button{background:none;border:0;font:700 15px var(--body);color:var(--em);cursor:pointer;min-height:44px;text-decoration:underline;text-underline-offset:4px}
+:root[data-theme=dark] .tix button{color:#6FB0FF}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .tix button{color:#6FB0FF}}
+.tix{border-top:4px solid var(--em)}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}
+.gal figure{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:1;background:var(--rule)}
+.gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{position:absolute;left:8px;bottom:8px;background:rgba(5,7,15,.78);color:#fff;font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px}
+.gal .wide{grid-column:span 2;aspect-ratio:2/1}
+.ba{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;grid-column:span 2}
+@media(max-width:760px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* before/after slider */
+.rvgrid{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:16px;margin-top:28px;align-items:stretch}
+.rvgrid .wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:16px;align-items:center}
+@media(max-width:900px){.rvgrid .wide{grid-template-columns:minmax(0,1fr)}}
+.ba-card{background:var(--sand);border:1px solid var(--rule);border-radius:12px;padding:12px}
+.ba-card h3{font-size:22px;margin:4px 4px 2px}.ba-card p{color:var(--mute);font-size:15px;margin:0 4px 10px}
+.cmp{position:relative;overflow:hidden;border-radius:8px;background:#000;touch-action:pan-y;user-select:none}
+.cmp img{display:block;width:100%;height:auto}
+.cmp .bef{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.cmp .bef img{width:100%;height:100%;object-fit:cover}
+.cmp .line{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.25);pointer-events:none}
+.cmp .knob{position:absolute;top:50%;left:var(--pos,50%);width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:var(--sun);color:#04111F;display:grid;place-items:center;font-weight:800;box-shadow:0 4px 14px rgba(0,0,0,.45);pointer-events:none}
+.cmp .tag{position:absolute;top:10px;background:rgba(5,7,15,.78);color:#fff;font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px;pointer-events:none}
+.cmp .tag.l{left:10px}.cmp .tag.r{right:10px}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;min-height:0}
+.cmp:has(input:focus-visible) .knob{outline:3px solid #fff;outline-offset:2px}
+.rvside{display:grid;gap:16px}
+.brakes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.brakes figure{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/3}
+.brakes img{width:100%;height:100%;object-fit:cover;display:block}
+.brakes figcaption{position:absolute;left:8px;bottom:8px;background:rgba(5,7,15,.78);color:#fff;font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px}
+.subh{font-size:clamp(26px,3.4vw,34px);margin-top:44px}
+@media(max-width:900px){.rvgrid{grid-template-columns:minmax(0,1fr)}}
+.truck{position:relative;margin:0}
+.truck figcaption{position:absolute;left:14px;top:14px;right:14px;width:fit-content;max-width:calc(100% - 28px);background:rgba(5,7,15,.82);color:#fff;font-weight:700;font-size:15px;padding:8px 14px;border-radius:999px;border:1px solid rgba(47,210,255,.5)}
+/* mobile band */
+.mobband{background:var(--sun);color:#04111F}
+.mobband .wrap{padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(40px,5vw,64px)}
+.mobband h2{font-size:clamp(40px,6vw,72px);margin-bottom:8px}
+.mobband .lede{color:#0B2340;font-size:19px;max-width:62ch}
+.spots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.spot{background:#fff;border-radius:12px;padding:22px;box-shadow:0 10px 30px rgba(4,17,31,.15)}
+.spot svg{width:44px;height:44px;color:#1660E8;margin-bottom:10px}
+.spot h3{font-size:26px;color:#04111F}.spot p{color:#33415C;font-size:15.5px;margin-top:4px}
+.mobband .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;align-items:center}
+.mobband .btn-dark{background:#04111F;color:#fff}.mobband .btn-dark:hover{background:#13213F}
+.mobband .cta a.tel{font-weight:800;font-size:18px;color:#04111F}
+@media(max-width:760px){.spots{grid-template-columns:minmax(0,1fr)}.truck figcaption{font-size:13px;padding:6px 12px;left:10px;top:10px}}
+/* booking */
+#book{background:var(--pine);color:var(--sand)}
+#book .lede{color:light-dark(#B5C3E3,#4E5A73)}
+.bk{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;margin-top:32px;align-items:start}
+.form{background:var(--card);color:var(--ink);border-radius:12px;padding:clamp(18px,3vw,32px)}
+.steps{display:flex;gap:6px;margin-bottom:22px;flex-wrap:wrap}
+.steps div{flex:1 1 90px;font-size:13px;font-weight:600;color:var(--mute);border-top:4px solid var(--rule);padding-top:6px}
+.steps .on{color:var(--ink);border-color:var(--em)}.steps .done{border-color:var(--em);color:var(--em)}
+.pane{display:none}.pane.on{display:block}
+.pane h3{font-size:28px;margin-bottom:14px}
+.opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.opt{text-align:left;background:var(--sand);border:2px solid var(--rule);border-radius:8px;padding:12px 14px;min-height:56px;font:600 16px var(--body);color:var(--ink);cursor:pointer}
+.opt small{display:block;font-weight:400;color:var(--mute);font-size:13.5px}
+.opt.sel{border-color:var(--em);background:light-dark(#E4EDFF,#15265A)}
+label{display:block;font-weight:600;font-size:15px;margin:14px 0 6px}
+input,textarea,select{width:100%;font:16px var(--body);padding:12px 14px;border:2px solid var(--rule);border-radius:8px;background:var(--sand);color:var(--ink);min-height:48px}
+textarea{min-height:110px;resize:vertical}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 14px}
+@media(max-width:560px){.two{grid-template-columns:minmax(0,1fr)}}
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px}
+.day{flex:none;width:72px;border:2px solid var(--rule);background:var(--sand);color:var(--ink);border-radius:8px;padding:8px 4px;text-align:center;cursor:pointer;font:600 14px var(--body)}
+.day b{display:block;font:800 26px/1 var(--disp)}.day.sel{border-color:var(--em);background:light-dark(#E4EDFF,#15265A)}
+.day:disabled{opacity:.35;cursor:not-allowed}
+.wins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+@media(max-width:560px){.wins{grid-template-columns:minmax(0,1fr)}}
+.bar{display:flex;justify-content:space-between;gap:12px;margin-top:24px;align-items:center}
+.err{color:#C2412D;font-weight:600;font-size:15px;min-height:24px;margin-top:10px}
+.ticket{border:2px dashed var(--em);border-radius:10px;padding:18px;margin:16px 0;background:var(--sand)}
+.ticket div{display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--rule);font-size:15.5px}
+.ticket div:last-child{border:0}.ticket span{color:var(--mute)}.ticket b{text-align:right}
+.stamp{display:inline-block;font:800 20px var(--disp);color:var(--em);border:3px solid var(--em);padding:2px 12px;border-radius:6px;transform:rotate(-4deg);margin-bottom:8px;letter-spacing:.02em}
+.side{display:grid;gap:14px}
+.side .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:20px}
+.side h3{font-size:24px;margin-bottom:6px}.side p,.side li{color:light-dark(#C3CFEA,#4E5A73);font-size:15.5px}
+.side ol{padding-left:20px;display:grid;gap:6px}
+@media(max-width:900px){.bk{grid-template-columns:minmax(0,1fr)}}
+/* reviews */
+.rv{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:28px;margin-top:32px;align-items:start}
+.score{background:linear-gradient(150deg,#1660E8,#7B3FE4);color:#fff;border-radius:12px;padding:28px}
+.score b{font:800 72px/1 var(--disp);display:block}
+.stars{color:var(--sun);font-size:24px;letter-spacing:2px}
+.score p{color:#E6ECFF;margin:10px 0 18px}
+.score .btn{margin:0 8px 8px 0}
+.wall{display:grid;gap:12px}
+.rev{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:18px}
+.rev q{display:block;font-size:17px;margin:6px 0}.rev small{color:var(--mute)}
+.empty{border:2px dashed var(--rule);border-radius:10px;padding:22px;color:var(--mute);text-align:center}
+.rate{display:flex;gap:4px}.rate button{background:none;border:0;font-size:34px;color:var(--rule);cursor:pointer;min-width:44px;min-height:44px}
+.rate button.on{color:var(--sun)}
+@media(max-width:900px){.rv{grid-template-columns:minmax(0,1fr)}}
+/* area */
+.area{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:center;margin-top:28px}
+.addr{display:flex;gap:12px;align-items:flex-start;background:var(--sand);border:1px solid var(--rule);border-radius:10px;padding:14px 16px;margin-top:16px;max-width:420px;font-size:16px;line-height:1.45}
+.addr svg{flex:none;color:var(--em);margin-top:2px}.addr a{color:var(--em);font-weight:700}
+.towns{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.towns span{background:var(--card);border:1px solid var(--rule);border-radius:999px;padding:6px 14px;font-weight:600;font-size:15px}
+.hours{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden}
+.hours th,.hours td{padding:11px 16px;border-bottom:1px solid var(--rule);text-align:left;font-size:15.5px}
+.hours td{text-align:right;white-space:nowrap}.hours tr.now{background:light-dark(#E4EDFF,#15265A);font-weight:700}
+@media(max-width:900px){.area{grid-template-columns:minmax(0,1fr)}}
+/* faq */
+details{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:0 20px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;padding:18px 0;min-height:44px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";font-size:22px;color:var(--em)}details[open] summary::after{content:"–"}
+details p{padding-bottom:18px;color:var(--mute)}
+footer{background:var(--pine);color:var(--sand);padding:40px 0}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;font-size:15px}
+footer a{color:var(--sun)}
+.callbar{display:none}
+@media(max-width:700px){.callbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:50}
+.callbar a{min-height:56px;display:flex;align-items:center;justify-content:center;font-weight:700;text-decoration:none}
+.callbar a:first-child{background:var(--pine);color:var(--sand)}.callbar a:last-child{background:var(--sun);color:#04111F}body{padding-bottom:56px}}
+.toast{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);background:var(--pine);color:var(--sand);padding:12px 18px;border-radius:8px;font-weight:600;opacity:0;transition:opacity .25s;pointer-events:none;z-index:60}
+.toast.show{opacity:1}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Emerald Repair H&R LLC","description":"Mobile RV repair, fence installation, epoxy garage floors and handyman service. We come to you in Navarre, FL and surrounding areas.","telephone":"+1-850-781-2803","email":"emeraldrepairhrllc@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Navarre","addressRegion":"FL","postalCode":"32566","addressCountry":"US"},"areaServed":["Navarre","Navarre Beach","Holley","Midway","Gulf Breeze","Pensacola Beach","Milton","Pace","Mary Esther","Fort Walton Beach"],"openingHours":["Mo-Fr 07:30-17:00","Sa 07:30-12:00"],"sameAs":["https://www.facebook.com/people/Emerald-repair-HR/61596432340080/"]}</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Emerald Repair H&amp;R home">
+      <img src="logo.png" width="48" height="48" alt="" style="border-radius:50%">
+      <span><b>Emerald Repair H&amp;R</b><small>Mobile RV repair &amp; handyman · Navarre, FL</small></span>
+    </a>
+    <nav class="menu" aria-label="Main">
+      <a href="#services">Services</a><a href="#work">Our work</a><a href="#reviews">Reviews</a><a href="#area">Service area</a><a href="#faq">FAQ</a>
+      <a class="btn btn-em" href="#book">Book a mobile visit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <img class="logo" src="logo.png" alt="Emerald Repair H&amp;R RV Repair and Handyman logo">
+      <p class="mob"><span>100% mobile</span> No towing. No drop-off.</p>
+      <h1>Mobile RV repair &amp; handyman. <em>We come to you.</em></h1>
+      <p>Navarre’s mobile handyman for RV repairs, wood fences, epoxy garage floors, painting, carpentry and the rest of your list. We come to your home, campground or storage lot. Free estimates.</p>
+      <div class="ctas">
+        <a class="btn btn-sun" href="#book">Book a mobile visit</a>
+        <a class="btn btn-ghost" href="tel:+18507812803">Call (850) 781-2803</a>
+      </div>
+      <div class="today"><i></i><span id="today"></span></div>
+    </div>
+    <figure class="truck"><img class="scene" src="truck.jpg" alt="Emerald Repair H&amp;R LLC work truck wrapped in blue with RV repair and fence graphics, under palm trees"><figcaption>Our shop on wheels. It comes to your driveway.</figcaption></figure>
+  </div>
+</section>
+<div class="trust"><div class="wrap">
+  <span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2FD2FF" stroke-width="2.4"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>Local Navarre LLC</span>
+  <span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2FD2FF" stroke-width="2.4"><path d="M4 12h16M12 4v16"/></svg>Free written estimates</span>
+  <span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2FD2FF" stroke-width="2.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Fully mobile: we come to you</span>
+  <span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2FD2FF" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg>Clean-up included</span>
+</div></div>
+
+<section class="mobband" id="mobile">
+  <div class="wrap">
+    <h2>We come to you.</h2>
+    <p class="lede">Every job is done on-site. No towing your RV to a shop, no dropping it off and waiting weeks. Our fully loaded truck brings the tools and parts to wherever you are.</p>
+    <div class="spots">
+      <div class="spot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><h3>Your driveway</h3><p>Fences, floors, home repairs, and RVs parked at home.</p></div>
+      <div class="spot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 20h18"/><path d="M6 20l6-14 6 14"/><path d="M10 20l2-5 2 5"/></svg><h3>Campground or RV park</h3><p>On the road and something broke? We meet you at your site.</p></div>
+      <div class="spot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M3 7l9-4 9 4"/><path d="M7 20v-7h10v7"/><path d="M7 16h10"/></svg><h3>Storage lot</h3><p>We fix it where it sits, so it’s ready when you are.</p></div>
+    </div>
+    <div class="cta"><a class="btn btn-dark" href="#book">Book a mobile visit</a><a class="tel" href="tel:+18507812803">or call (850) 781-2803</a></div>
+  </div>
+</section>
+
+<section class="band" id="services">
+  <div class="wrap">
+    <h2>What we do</h2>
+    <p class="lede">Every service is mobile: from your RV to your backyard fence to your garage floor, we do it on-site. Pick a service to start a booking.</p>
+    <div class="svc" id="svcList"></div>
+  </div>
+</section>
+
+<section class="band" id="work" style="background:var(--card)">
+  <div class="wrap">
+    <h2>Recent work around Navarre</h2>
+    <p class="lede">Real jobs by our crew, from RV roofs to backyard fences.</p>
+    <h3 class="subh">RV repair: before &amp; after</h3>
+    <p class="lede">Drag the round handle to compare. Water damage is the number one RV killer on the Gulf Coast, and we fix it down to the framing.</p>
+    <div class="rvgrid">
+      <div class="ba-card">
+        <h3>Cab-over bunk rebuild</h3>
+        <p>Rotted, water-stained bunk floor torn out and rebuilt with a new deck, new walls and a clean finish.</p>
+        <div class="cmp" style="--pos:50%">
+          <img src="rv-bunk-after.jpg" alt="Cab-over bunk after: new wood-look floor, clean walls, TV mounted" loading="lazy">
+          <div class="bef"><img src="rv-bunk-before.jpg" alt="Cab-over bunk before: dark stained, rotted floor and rusted corner" loading="lazy"></div>
+          <span class="tag l">Before</span><span class="tag r">After</span><span class="line"></span><span class="knob" aria-hidden="true">↔</span>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare cab-over bunk before and after">
+        </div>
+      </div>
+      <div class="ba-card">
+          <h3>Roof decking replaced</h3>
+          <p>Soaked, moldy roof plywood cut out and replaced with new decking, ready for the new membrane.</p>
+          <div class="cmp" style="--pos:50%">
+            <img src="rv-roof-after.jpg" alt="RV roof after: new smooth plywood decking with vent opening" loading="lazy">
+            <div class="bef"><img src="rv-roof-before.jpg" alt="RV roof before: rotted, stained plywood around a vent" loading="lazy"></div>
+            <span class="tag l">Before</span><span class="tag r">After</span><span class="line"></span><span class="knob" aria-hidden="true">↔</span>
+            <input type="range" min="0" max="100" value="50" aria-label="Compare RV roof before and after">
+          </div>
+        </div>
+        <div class="ba-card wide">
+          <div><h3>Brakes &amp; wheel bearings</h3>
+          <p>Hubs pulled, bearings repacked and brakes serviced so your RV or trailer is safe on the road.</p></div>
+          <div class="brakes">
+            <figure><img src="rv-brakes1.jpg" alt="RV axle with hub removed showing brake assembly and greased spindle" loading="lazy"><figcaption>Hub off</figcaption></figure>
+            <figure><img src="rv-brakes2.jpg" alt="Technician fitting a brake drum back onto the RV axle" loading="lazy"><figcaption>Drum back on</figcaption></figure>
+          </div>
+        </div>
+    </div>
+    <h3 class="subh">Fences &amp; epoxy floors</h3>
+    <div class="gal" style="margin-top:20px">
+      <div class="ba">
+        <figure><img src="garage-before.jpg" alt="Bare stained concrete garage floor before coating" loading="lazy"><figcaption>Before</figcaption></figure>
+        <figure><img src="garage-after.jpg" alt="Same garage with a new flake epoxy floor" loading="lazy"><figcaption>After: flake epoxy</figcaption></figure>
+      </div>
+      <figure class="wide"><img src="fence-pool.jpg" alt="New wood privacy fence around a backyard pool" loading="lazy"><figcaption>Pool privacy fence</figcaption></figure>
+      <figure><img src="floor1.jpg" alt="Close-up of multicolor epoxy flake" loading="lazy"><figcaption>Flake detail</figcaption></figure>
+      <figure><img src="floor-shine.jpg" alt="Glossy epoxy floor finish" loading="lazy"><figcaption>High-gloss topcoat</figcaption></figure>
+      <figure><img src="fence1.jpg" alt="New wood fence line along a backyard" loading="lazy"><figcaption>Wood fence</figcaption></figure>
+      <figure><img src="fence2.jpg" alt="Wood fence with posts and rails among pines" loading="lazy"><figcaption>Fence install</figcaption></figure>
+    </div>
+    <p style="margin-top:20px"><a class="btn btn-em" href="https://www.facebook.com/people/Emerald-repair-HR/61596432340080/" target="_blank" rel="noopener">See more on Facebook</a></p>
+  </div>
+</section>
+
+<section class="band" id="book">
+  <div class="wrap">
+    <h2>Book a visit</h2>
+    <p class="lede">Four quick steps. Your request comes straight to us, and we call you to confirm before your visit.</p>
+    <div class="bk">
+      <div class="form">
+        <div class="steps" id="steps"><div>1. Job</div><div>2. Details</div><div>3. Day &amp; time</div><div>4. Contact</div></div>
+        <div class="pane on" data-p="0"><h3>What needs fixing?</h3><div class="opts" id="jobOpts"></div></div>
+        <div class="pane" data-p="1"><h3>Tell us about it</h3>
+          <label for="fDesc">What's going on?</label>
+          <textarea id="fDesc" placeholder="Example: 6 ft privacy fence, about 150 ft, around the backyard. Or: RV entry door won’t latch, 2019 Jayco."></textarea>
+          <div class="two">
+            <div><label for="fProp">Property</label><select id="fProp"><option>House</option><option>RV / camper</option><option>Condo / townhome</option><option>Rental I own</option><option>Business</option></select></div>
+            <div><label for="fUrg">How soon?</label><select id="fUrg"><option>This week</option><option>Next 2 weeks</option><option>Urgent: leak or damage</option><option>Flexible</option></select></div>
+          </div>
+          <label for="fPhoto">Photos help us quote faster (optional)</label>
+          <input id="fPhoto" type="file" accept="image/*" multiple>
+          <p id="photoNote" style="font-size:14px;color:var(--mute);margin-top:6px"></p>
+        </div>
+        <div class="pane" data-p="2"><h3>Pick a day and window</h3>
+          <p style="color:var(--mute);font-size:15px;margin-bottom:10px">Earliest opening is 2 days out, so we have time to call you and confirm.</p>
+          <div class="days" id="dayOpts"></div>
+          <div class="wins" id="winOpts"></div>
+        </div>
+        <div class="pane" data-p="3"><h3>Where should we come?</h3><p style="color:var(--mute);font-size:15px">For an RV, use the address where it’s parked.</p>
+          <div class="two">
+            <div><label for="fName">Name</label><input id="fName" autocomplete="name"></div>
+            <div><label for="fPhone">Mobile number</label><input id="fPhone" type="tel" autocomplete="tel" placeholder="(850) 000-0000"></div>
+          </div>
+          <input type="text" id="fWeb" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <label for="fAddr">Street address</label><input id="fAddr" autocomplete="street-address">
+          <div class="two">
+            <div><label for="fCity">City</label><select id="fCity"></select></div>
+            <div><label for="fEmail">Email (optional)</label><input id="fEmail" type="email" autocomplete="email"></div>
+          </div>
+        </div>
+        <div class="pane" data-p="4">
+          <div id="sending"><span class="stamp">SENDING…</span><h3>Sending your request</h3><p style="color:var(--mute)">One moment while we send it to Emerald Repair.</p></div>
+          <div id="sent" hidden>
+            <span class="stamp">REQUEST SENT</span>
+            <h3>Got it. Your request is in.</h3>
+            <p style="color:var(--mute);font-size:15.5px">We just received your booking by email. We’ll call you within 2 days to confirm your visit. Want a faster reply? Text it to us too.</p>
+            <div class="ticket" id="ticket"></div>
+            <div class="bar" style="flex-wrap:wrap;justify-content:flex-start">
+              <a class="btn btn-sun" id="smsLink" href="#">Also text it to us</a>
+              <button class="btn btn-ghost" type="button" id="copyBtn" style="color:var(--ink)">Copy my booking</button>
+              <button class="btn btn-em" type="button" onclick="resetBk()">Book another job</button>
+            </div>
+            <p style="font-size:14px;color:var(--mute);margin-top:12px">Optional. Your messages app opens with the booking already typed to (850) 781-2803. Tap Send, then come back here.</p>
+          </div>
+          <div id="failed" hidden>
+            <span class="stamp" style="color:#C2412D;border-color:#C2412D">NOT SENT</span>
+            <h3>That didn’t go through</h3>
+            <p style="color:var(--mute);font-size:15.5px">Check your connection and try again, or call or text (850) 781-2803.</p>
+            <div class="bar" style="flex-wrap:wrap;justify-content:flex-start">
+              <button class="btn btn-em" type="button" id="retryBtn">Try again</button>
+              <a class="btn btn-ghost" href="tel:+18507812803" style="color:var(--ink)">Call (850) 781-2803</a>
+            </div>
+          </div>
+        </div>
+        <div class="err" id="err" role="alert"></div>
+        <div class="bar" id="bar"><button class="btn btn-ghost" type="button" id="backBtn" style="color:var(--ink)">Back</button><button class="btn btn-em" type="button" id="nextBtn">Continue</button></div>
+      </div>
+      <aside class="side">
+        <div class="card"><h3>How it works</h3><ol><li>You pick an open 2-hour arrival window, 2 or more days out.</li><li>Your request comes straight to us and we call you to confirm.</li><li>We look at the job and give a written price before any work.</li><li>You approve, we fix it and clean up.</li></ol></div>
+        <div class="card"><h3>Your request</h3><p id="sum">Nothing picked yet.</p></div>
+        <div class="card"><h3>Rather talk?</h3><p>Call or text <a href="tel:+18507812803" style="color:var(--sun)">(850) 781-2803</a>. If we're on a ladder, leave a message and we'll call back the same day.</p></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="reviews">
+  <div class="wrap">
+    <h2>What neighbors say</h2>
+    <p class="lede">Real reviews from real jobs. Finished a job with us? Tell us how it went.</p>
+    <div class="rv">
+      <div class="score">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <b>Be first</b>
+        <p>We’re a new Navarre business building our name one job at a time. If we worked for you, a quick review helps your neighbors find us.</p>
+        <a class="btn btn-sun" href="https://www.facebook.com/people/Emerald-repair-HR/61596432340080/" target="_blank" rel="noopener">Review us on Facebook</a>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Emerald+Repair+H%26R+LLC+Navarre+FL" target="_blank" rel="noopener">Find us on Google</a>
+      </div>
+      <div class="wall">
+        <div id="revWall"><div class="empty">Customer reviews will show here as they come in.</div></div>
+        <form class="rev" id="revForm">
+          <h3 style="font-size:24px">Rate your job</h3>
+          <div class="rate" id="rate" role="radiogroup" aria-label="Star rating"></div>
+          <div class="two">
+            <div><label for="rName">First name</label><input id="rName"></div>
+            <div><label for="rJob">Job we did</label><input id="rJob" placeholder="Fence repair"></div>
+          </div>
+          <label for="rText">Your review</label><textarea id="rText"></textarea>
+          <div class="err" id="rErr"></div>
+          <button class="btn btn-em" type="submit">Post my review</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="area" style="background:var(--card)">
+  <div class="wrap">
+    <h2>We come to you</h2>
+    <div class="area">
+      <div>
+        <p class="lede">We’re a fully mobile service based in Navarre, FL. We work at your home, campground or RV storage lot across the area. Not sure if you’re in range? Text us your ZIP.</p>
+        <div class="addr"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 16V7h11v9"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+          <div><b>100% mobile service</b><br>No shop to haul to. We bring the tools, the truck and the parts to your driveway, campground or storage lot.</div></div>
+        <div class="towns" id="towns"></div>
+        <a class="btn btn-em" href="#book">Book in your town</a>
+      </div>
+      <table class="hours" aria-label="Working hours"><tbody id="hours"></tbody></table>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="faq">
+  <div class="wrap" style="max-width:860px">
+    <h2>Good questions</h2>
+    <details><summary>Do I need to bring my RV somewhere?</summary><p>No. We’re fully mobile. We come to wherever it’s parked: your driveway, a campground or a storage lot. Just tell us the spot when you book.</p></details>
+    <details><summary>Do you charge for estimates?</summary><p>No. We look at the job and give you a written price before any work starts. You decide, no pressure.</p></details>
+    <details><summary>Is there a minimum job size?</summary><p>Small jobs are welcome. Grouping a few small repairs in one visit saves you money.</p></details>
+    <details><summary>Do you come to my RV?</summary><p>Yes. Tell us the make, model and year when you book, and where it’s parked: home, storage lot or campground.</p></details>
+    <details><summary>How long does an epoxy garage floor take?</summary><p>Most garages take a couple of days, including prep and cure time. You get the exact timeline with your estimate.</p></details>
+    <details><summary>Do you work on rentals and vacation homes?</summary><p>Yes. Owners and property managers can book for a property they aren't at. Just tell us how we get in.</p></details>
+    <details><summary>Can you help after a storm?</summary><p>Yes. Pick "Urgent" when you book and send photos. Downed fence panels and leaks go first.</p></details>
+    <details><summary>How do I pay?</summary><p>You pay when the job is done and you're happy with it. We take card, cash and the usual payment apps.</p></details>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <div><b style="font:800 24px var(--disp)">Emerald Repair H&amp;R LLC</b><br>RV repair · Fences · Epoxy floors · Handyman<br>Mobile service · Navarre, FL and surrounding areas</div>
+  <div>Call or text: <a href="tel:+18507812803">(850) 781-2803</a><br>Email: <span>emeraldrepairhrllc@gmail.com</span><br><a href="https://www.facebook.com/people/Emerald-repair-HR/61596432340080/" target="_blank" rel="noopener">Facebook</a> · © <span id="yr"></span> Emerald Repair H&amp;R LLC</div>
+</div></footer>
+<div class="callbar"><a href="tel:+18507812803">Call</a><a href="#book">Book a visit</a></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+{
+const PHONE="+18507812803";
+/* Booking backend: paste the Google Apps Script web app URL here (ends in /exec). */
+const BOOKING_API="";
+/* Earliest day a customer can pick: 2 days after today, so he has time to call and confirm. */
+const LEAD_DAYS=2;
+/* Backup if the backend isn't set up yet: emails the request to him, like the Hispanhandle site. */
+const FORM_EMAIL="emeraldrepairhrllc@gmail.com";
+const JOBS=[
+ {id:"rv",name:"RV repair",desc:"Roof and water damage, rotted floors and bunks, brakes and wheel bearings, doors, cabinets, seals and leaks.",from:"Free estimate"},
+ {id:"fence",name:"Fence installation",desc:"New wood privacy fences, pool fences and gates, plus repairs and replacement panels.",from:"Free estimate"},
+ {id:"epoxy",name:"Epoxy garage floors",desc:"Flake epoxy coatings that turn stained concrete into a clean, glossy, easy-to-clean floor.",from:"Free estimate"},
+ {id:"home",name:"Home improvements",desc:"Upgrades and small remodels: fixtures, shelving, doors, trim and finishing work.",from:"Free estimate"},
+ {id:"paint",name:"Painting",desc:"Interior and exterior painting, touch-ups, trim, doors and fences.",from:"Free estimate"},
+ {id:"carp",name:"Carpentry",desc:"Wood rot, trim, steps, decks and custom carpentry, built to last in Gulf weather.",from:"Free estimate"},
+ {id:"handy",name:"Repairs & more",desc:"The honey-do list: patching, hanging, adjusting and fixing in one visit.",from:"Free estimate"},
+ {id:"storm",name:"Storm damage",desc:"Downed fence panels, siding and trim after wind or rain. Send photos with your request.",from:"Priority"}
+];
+const TOWNS=["Navarre","Navarre Beach","Holley","Midway","Gulf Breeze","Pensacola Beach","Milton","Pace","Mary Esther","Fort Walton Beach"];
+const HOURS=[null,[7.5,17],[7.5,17],[7.5,17],[7.5,17],[7.5,17],[7.5,12]]; // Sun..Sat
+const WINS=[[8,10,"Morning"],[10,12,"Late morning"],[13,15,"Early afternoon"],[15,17,"Late afternoon"]];
+const DAYN=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmtH=h=>{const hh=Math.floor(h),m=Math.round((h-hh)*60);return (((hh+11)%12)+1)+(m?":"+String(m).padStart(2,"0"):"")+(hh>=12?" PM":" AM")};
+const toast=t=>{const e=$("toast");e.textContent=t;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),2200)};
+$("yr").textContent=new Date().getFullYear();
+
+/* today */
+const n=new Date(),d=n.getDay(),h=n.getHours()+n.getMinutes()/60,r=HOURS[d];
+let t;
+if(r&&h>=r[0]&&h<r[1])t="Taking calls now until "+fmtH(r[1]);
+else{for(let i=r&&h<r[0]?0:1;i<8;i++){const nd=(d+i)%7;if(HOURS[nd]){t="Phones open "+(i===0?"today":i===1?"tomorrow":DAYN[nd])+" at "+fmtH(HOURS[nd][0])+". Online booking is open 24/7";break;}}}
+$("today").textContent=t;
+
+/* services */
+$("svcList").innerHTML=JOBS.map(j=>`<article class="tix"><h3>${j.name}</h3><p>${j.desc}</p><div class="row"><span class="from">${j.from}</span><button type="button" data-job="${j.id}">Book this</button></div></article>`).join("");
+$("svcList").addEventListener("click",e=>{const b=e.target.closest("[data-job]");if(!b)return;S.job=b.dataset.job;renderJobs();go(0);loadTaken();sum();$("book").scrollIntoView()});
+
+/* area */
+$("towns").innerHTML=TOWNS.map(x=>`<span>${x}</span>`).join("");
+$("fCity").innerHTML=TOWNS.map(x=>`<option>${x}</option>`).join("")+"<option>Somewhere else</option>";
+$("hours").innerHTML=[1,2,3,4,5,6,0].map(i=>`<tr class="${i===d?"now":""}"><th scope="row">${DAYN[i]}${i===d?" (today)":""}</th><td>${HOURS[i]?fmtH(HOURS[i][0])+" – "+fmtH(HOURS[i][1]):"Closed"}</td></tr>`).join("");
+
+/* booking */
+const S={job:null,date:null,win:null,step:0};
+function renderJobs(){$("jobOpts").innerHTML=JOBS.map(j=>`<button type="button" class="opt ${S.job===j.id?"sel":""}" aria-pressed="${S.job===j.id}" data-id="${j.id}">${j.name}<small>${j.from}</small></button>`).join("")}
+$("jobOpts").addEventListener("click",e=>{const b=e.target.closest(".opt");if(!b)return;S.job=b.dataset.id;renderJobs();sum()});
+const key=x=>x.getFullYear()+"-"+String(x.getMonth()+1).padStart(2,"0")+"-"+String(x.getDate()).padStart(2,"0");
+let TAKEN=new Set(),takenLoaded=false;
+const slotKey=(d,w)=>d+"|"+w;
+function winsFor(k){const hr=HOURS[new Date(k+"T00:00").getDay()];return hr?WINS.map((w,i)=>({w,i})).filter(o=>o.w[0]>=hr[0]-0.5&&o.w[1]<=hr[1]):[]}
+const dayFull=k=>{const ws=winsFor(k);return ws.length>0&&ws.every(o=>TAKEN.has(slotKey(k,o.i)))};
+async function loadTaken(){
+  if(!BOOKING_API){takenLoaded=true;return}
+  try{const r=await fetch(BOOKING_API,{cache:"no-store"});const j=await r.json();TAKEN=new Set((j.taken||[]).map(s=>slotKey(s.date,Number(s.win))))}catch(e){}
+  takenLoaded=true;if(S.step===2)renderDays();
+}
+function renderDays(){
+  const out=[];
+  for(let i=LEAD_DAYS;i<LEAD_DAYS+14;i++){const x=new Date();x.setHours(0,0,0,0);x.setDate(x.getDate()+i);const k=key(x),ok=!!HOURS[x.getDay()]&&!dayFull(k);
+    out.push(`<button type="button" class="day ${S.date===k?"sel":""}" ${ok?"":"disabled"} data-k="${k}"><small>${DAYN[x.getDay()].slice(0,3)}</small><b>${x.getDate()}</b><small>${HOURS[x.getDay()]&&!ok?"Full":x.toLocaleString("en-US",{month:"short"})}</small></button>`)}
+  $("dayOpts").innerHTML=out.join("");
+  if(!S.date){$("winOpts").innerHTML='<p style="color:var(--mute);grid-column:1/-1">'+(takenLoaded?"Choose a day to see arrival windows.":"Checking open times…")+'</p>';return}
+  if(S.win!=null&&TAKEN.has(slotKey(S.date,S.win)))S.win=null;
+  $("winOpts").innerHTML=winsFor(S.date).map(({w,i})=>{const tk=TAKEN.has(slotKey(S.date,i));return `<button type="button" class="opt ${S.win===i?"sel":""}" data-w="${i}" ${tk?"disabled":""} style="${tk?"opacity:.45;cursor:not-allowed":""}">${w[2]}<small>${tk?"Already booked":fmtH(w[0])+" – "+fmtH(w[1])}</small></button>`}).join("");
+}
+$("dayOpts").addEventListener("click",e=>{const b=e.target.closest(".day");if(!b||b.disabled)return;S.date=b.dataset.k;S.win=null;renderDays();sum()});
+$("winOpts").addEventListener("click",e=>{const b=e.target.closest("[data-w]");if(!b||b.disabled)return;S.win=+b.dataset.w;renderDays();sum()});
+$("fPhoto").addEventListener("change",e=>{const c=e.target.files.length;$("photoNote").textContent=c?c+" photo"+(c>1?"s":"")+" added. When we text you to confirm, just reply with them.":""});
+const whenTxt=()=>new Date(S.date+"T00:00").toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric"})+", "+fmtH(WINS[S.win][0])+" – "+fmtH(WINS[S.win][1]);
+function sum(){
+  const p=[],j=JOBS.find(x=>x.id===S.job);if(j)p.push(j.name);
+  if(S.date&&S.win!=null)p.push(whenTxt());
+  $("sum").textContent=p.length?p.join(" · "):"Nothing picked yet.";$("err").textContent="";
+}
+function go(k){
+  S.step=k;document.querySelectorAll(".pane").forEach(p=>p.classList.toggle("on",+p.dataset.p===k));
+  document.querySelectorAll("#steps div").forEach((x,i)=>{x.classList.toggle("on",i===k);x.classList.toggle("done",i<k)});
+  $("backBtn").style.visibility=k>0&&k<4?"visible":"hidden";
+  $("bar").style.display=k===4?"none":"flex";
+  $("nextBtn").textContent=k===3?"Book my visit":"Continue";
+  if(k===2)renderDays();
+}
+let orderTxt="",payload=null;
+const show=id=>["sending","sent","failed"].forEach(x=>$(x).hidden=x!==id);
+async function emailOwner(){
+  const r=await fetch("https://formsubmit.co/ajax/"+FORM_EMAIL,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
+    body:JSON.stringify({_subject:"New booking: "+payload.job+", "+payload.whenText,_template:"table",_captcha:"false",_honey:payload.website,
+      Job:payload.job,When:payload.whenText,Name:payload.name,Phone:payload.phone,Address:payload.address+", "+payload.city,
+      Details:payload.details,Property:payload.property,Urgency:payload.urgency,Email:payload.email||"-"})});
+  const j=await r.json().catch(()=>({}));
+  if(!r.ok||String(j.success)!=="true")throw new Error(j.message||"email");
+}
+async function send(){
+  show("sending");go(4);
+  try{
+    if(BOOKING_API){
+      const r=await fetch(BOOKING_API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)});
+      const j=await r.json();
+      if(!j.ok&&j.reason==="taken"){TAKEN.add(slotKey(S.date,S.win));S.win=null;go(2);renderDays();sum();$("err").textContent="Someone just booked that window. Please pick another time.";return}
+      if(!j.ok)throw new Error(j.reason||"error");
+    }
+    await emailOwner();
+    TAKEN.add(slotKey(S.date,S.win));
+    const ios=/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent);
+    $("smsLink").href="sms:"+PHONE+(ios?"&":"?")+"body="+encodeURIComponent(orderTxt);
+    show("sent");
+  }catch(err){show("failed")}
+}
+$("nextBtn").addEventListener("click",()=>{
+  const E=m=>{$("err").textContent=m};
+  if(S.step===0&&!S.job)return E("Pick the kind of job to continue.");
+  if(S.step===1&&$("fDesc").value.trim().length<5)return E("Give us a sentence about the job.");
+  if(S.step===2&&(!S.date||S.win==null))return E("Pick a day and an arrival window.");
+  if(S.step===3){
+    const nm=$("fName").value.trim(),ph=$("fPhone").value.replace(/\D/g,""),ad=$("fAddr").value.trim();
+    if(!nm)return E("Enter your name.");if(ph.length<10)return E("Enter a 10-digit mobile number.");if(!ad)return E("Enter the street address.");
+    const job=JOBS.find(x=>x.id===S.job).name;
+    const rows=[["Name",nm],["Phone",$("fPhone").value.trim()],["Job",job],["Details",$("fDesc").value.trim()],["Property",$("fProp").value],["Urgency",$("fUrg").value],["When",whenTxt()],["Address",ad+", "+$("fCity").value]];
+    $("ticket").innerHTML=rows.map(r=>`<div><span>${r[0]}</span><b>${esc(r[1])}</b></div>`).join("");
+    orderTxt="Emerald Repair H&R LLC booking\n"+rows.map(r=>r[0]+": "+r[1]).join("\n");
+    payload={date:S.date,win:S.win,window:WINS[S.win][2]+" "+fmtH(WINS[S.win][0])+" – "+fmtH(WINS[S.win][1]),whenText:whenTxt(),job,name:nm,phone:$("fPhone").value.trim(),address:ad,city:$("fCity").value,details:$("fDesc").value.trim(),property:$("fProp").value,urgency:$("fUrg").value,email:$("fEmail").value.trim(),website:$("fWeb").value};
+    return send();
+  }
+  go(S.step+1);
+});
+$("backBtn").addEventListener("click",()=>go(S.step-1));
+$("retryBtn").addEventListener("click",send);
+$("copyBtn").addEventListener("click",async()=>{try{await navigator.clipboard.writeText(orderTxt);toast("Booking copied")}catch(e){toast("Copy didn't work. Select the text above instead.")}});
+window.resetBk=()=>{Object.assign(S,{job:null,date:null,win:null});["fDesc","fName","fPhone","fAddr","fEmail","fPhoto"].forEach(i=>$(i).value="");$("photoNote").textContent="";renderJobs();sum();go(0)};
+renderJobs();go(0);loadTaken();
+
+/* before/after sliders */
+document.querySelectorAll(".cmp input").forEach(r=>{const c=r.closest(".cmp");const f=()=>c.style.setProperty("--pos",r.value+"%");r.addEventListener("input",f);f()});
+
+/* reviews */
+let stars=0;
+const drawStars=()=>{$("rate").innerHTML=[1,2,3,4,5].map(i=>`<button type="button" role="radio" aria-checked="${stars===i}" aria-label="${i} star${i>1?"s":""}" class="${i<=stars?"on":""}" data-s="${i}">★</button>`).join("")};
+$("rate").addEventListener("click",e=>{const b=e.target.closest("[data-s]");if(!b)return;stars=+b.dataset.s;drawStars()});
+drawStars();
+$("revForm").addEventListener("submit",e=>{
+  e.preventDefault();const nm=$("rName").value.trim(),tx=$("rText").value.trim(),jb=$("rJob").value.trim();
+  if(!stars)return $("rErr").textContent="Tap the stars to rate the job.";
+  if(!nm||tx.length<5)return $("rErr").textContent="Add your first name and a few words.";
+  $("rErr").textContent="";
+  const w=$("revWall");if(w.querySelector(".empty"))w.innerHTML="";
+  w.insertAdjacentHTML("afterbegin",`<div class="rev"><div class="stars">${"★".repeat(stars)}${"☆".repeat(5-stars)}</div><q>${esc(tx)}</q><small><b>${esc(nm)}</b>${jb?", "+esc(jb):""} · just now</small></div>`);
+  e.target.reset();stars=0;drawStars();toast("Thanks! Please post it on Google too.");
+});
+}
+</script>
+</body>
+</html>
